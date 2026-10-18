@@ -14,9 +14,9 @@ public class MarketPintar {
             total += harga[i];
         }
 
-        hasil[0] = total;                       // Total awal
-        hasil[1] = (total >= 50000) ? 5000 : 0; // Diskon Rp 5.000 jika total >= 50rb
-        hasil[2] = hasil[0] - hasil[1];         // Total akhir
+        hasil[0] = total;                       
+        hasil[1] = (total >= 50000) ? 5000 : 0; 
+        hasil[2] = hasil[0] - hasil[1];         
     }
 
     // 3. FUNGSI (Pass by Value)
@@ -29,8 +29,8 @@ public class MarketPintar {
         Scanner input = new Scanner(System.in);
 
         // 4. ARRAY
-        double[] hargaBarang = new double[3]; // Menampung 3 input harga barang
-        double[] hasilBayar = new double[3];  // Menampung [0]=Total, [1]=Diskon, [2]=TotalAkhir
+        double[] hargaBarang = new double[3]; 
+        double[] hasilBayar = new double[3];  //[0]=Total, [1]=Diskon, [2]=TotalAkhir
 
         System.out.println("=== " + namaToko + " ===");
 
