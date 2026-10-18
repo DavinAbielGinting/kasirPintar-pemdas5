@@ -84,7 +84,7 @@ public class MarketPintar {
 
         // 4. ARRAY
         String[] barangUser = new String[3];
-        String[] namaBarang = {"Wipul", "bebelec", "Pepsodint", "Indomee", "Minyak"};
+        String[] namaBarang = {"Karbol", "Susu", "Pasta Gigi", "Mie Instan", "Minyak"};
         double[] hargaTiapBarang = {11000, 150000, 20000, 3000, 45000};
         double[] hargaBarang = new double[3];
         double[] hasilBayar = new double[3];  // Menampung [0]=Total, [1]=Diskon, [2]=TotalAkhir
