@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class MarketPintar {
+
+    // 1. VARIABEL GLOBAL
+    static String namaToko = "Minimarket Sukses";
+
+    // 2. PROSEDUR (Pass by Reference lewat Array)
+    // Parameter Formal: harga, hasil
+    public static void hitungTotal(double[] harga, double[] hasil) {
+        // VARIABEL LOKAL
+        double total = 0;
+        for (int i = 0; i < harga.length; i++) {
+            total += harga[i];
+        }
+
+        hasil[0] = total;                       // Total awal
+        hasil[1] = (total >= 50000) ? 5000 : 0; // Diskon Rp 5.000 jika total >= 50rb
+        hasil[2] = hasil[0] - hasil[1];         // Total akhir
+    }
+
+    // 3. FUNGSI (Pass by Value)
+    // Parameter Formal: diskon
+    public static boolean adaDiskon(double diskon) {
+        return diskon > 0;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // 4. ARRAY
+        double[] hargaBarang = new double[3]; // Menampung 3 input harga barang
+        double[] hasilBayar = new double[3];  // Menampung [0]=Total, [1]=Diskon, [2]=TotalAkhir
+
+        System.out.println("=== " + namaToko + " ===");
+
+        // Input harga menggunakan Scanner
+        for (int i = 0; i < hargaBarang.length; i++) {
+            System.out.print("Masukkan harga barang ke-" + (i + 1) + ": Rp ");
+            hargaBarang[i] = input.nextDouble();
+        }
+
+        // Pemanggilan Prosedur (Pass by Reference lewat Array hasilBayar)
+        hitungTotal(hargaBarang, hasilBayar);
+
+        // Cetak Struk
+        System.out.println("\n-----------------------------");
+        System.out.println("Total Awal  : Rp " + hasilBayar[0]);
+        System.out.println("Diskon      : Rp " + hasilBayar[1]);
+        System.out.println("Total Bayar : Rp " + hasilBayar[2]);
+
+        // Pemanggilan Fungsi (Pass by Value)
+        if (adaDiskon(hasilBayar[1])) {
+            System.out.println("Status      : Selamat! Anda mendapat diskon.");
+        }
+    }
+}
+
