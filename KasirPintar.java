@@ -58,9 +58,9 @@ public class MarketPintar {
 
         // Cetak Struk
         System.out.println("\n-----------------------------");
-        System.out.printf("Total Awal  : Rp %,.0f%n", hasilBayar[0]);
-        System.out.printf("Diskon      : Rp %,.0f%n", hasilBayar[1]);
-        System.out.printf("Total Bayar : Rp %,.0f%n", hasilBayar[2]);
+        System.out.printf("Total Awal  : Rp %,.0f\n", hasilBayar[0]);
+        System.out.printf("Diskon      : Rp %,.0f\n", hasilBayar[1]);
+        System.out.printf("Total Bayar : Rp %,.0f\n", hasilBayar[2]);
 
         // Cek diskon
         if (hasilBayar[1] > 0) {
