@@ -32,17 +32,15 @@ public class MarketPintar {
 
         String[] barangUser = new String[3];
         String[] namaBarang = {"Karbol", "Susu Formula", "Pasta Gigi", "Mie Instan", "Minyak"};
-        double[] hargaTiapBarang = {11000, 150000, 20000, 3000, 45000};
+        double[] daftarHarga = {11000, 150000, 20000, 3000, 45000};
         double[] hargaBarang = new double[3];
         double[] hasilBayar = new double[3];  // [0]=Total, [1]=Diskon, [2]=TotalAkhir
 
         System.out.println("=== " + namaToko + " ===");
         System.out.println("Daftar Barang:");
-        System.out.println("Karbol       ==> Rp11,000");
-        System.out.println("Susu Formula ==> Rp150,000");
-        System.out.println("Pasta Gigi   ==> Rp20,000");
-        System.out.println("Mie Instan   ==> Rp3,000");
-        System.out.println("Minyak       ==> Rp45,000");
+        for (int i = 0; i < namaBarang.length; i++) {
+            System.out.printf("%-12s ==> Rp %,5.0f\n", namaBarang[i], daftarHarga[i]);
+        }
 
         // Input nama barang
         for (int i = 0; i < barangUser.length; i++) {
@@ -50,7 +48,7 @@ public class MarketPintar {
             barangUser[i] = input.nextLine();
 
             // Memanggil fungsi cariHarga
-            hargaBarang[i] = cariHarga(barangUser[i], namaBarang, hargaTiapBarang);
+            hargaBarang[i] = cariHarga(barangUser[i], namaBarang, daftarHarga);
         }
 
         // MEmanggil prosedur
@@ -69,4 +67,5 @@ public class MarketPintar {
             System.out.println("Status      : Maaf, anda belum mendapatkan diskon.");
         }
     }
+
 }
